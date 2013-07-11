@@ -24,10 +24,8 @@ import base64
 import clientsecrets
 import copy
 import datetime
-logging.error('client import httplib2')
 from httplib2 import DEFAULT_MAX_REDIRECTS
 from httplib2 import Http
-logging.error('whew...')
 import os
 import sys
 import time
@@ -37,15 +35,12 @@ import urlparse
 from oauth2client import GOOGLE_AUTH_URI
 from oauth2client import GOOGLE_REVOKE_URI
 from oauth2client import GOOGLE_TOKEN_URI
-# from oauth2client import util
-# from oauth2client.anyjson import simplejson
 import util
 from anyjson import simplejson
 
 HAS_OPENSSL = False
 HAS_CRYPTO = False
 try:
-  # from oauth2client import crypt
   import crypt
   HAS_CRYPTO = True
   if crypt.OpenSSLVerifier is not None:

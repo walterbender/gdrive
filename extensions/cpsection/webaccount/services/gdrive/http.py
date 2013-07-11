@@ -27,10 +27,8 @@ import StringIO
 import base64
 import copy
 import gzip
-logging.error('http: before import httplib2.http')
 from httplib2 import DEFAULT_MAX_REDIRECTS
 from httplib2 import Response
-logging.error('after import httplib2.http')
 import mimeparse
 import mimetypes
 import os

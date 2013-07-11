@@ -99,17 +99,13 @@ def loads(s):
 
 def _loadfile(filename):
   try:
-    logging.error('trying to open %s' % filename)
     fp = file(filename, 'r')
-    logging.error('file opened')
     try:
       obj = simplejson.load(fp)
-      logging.error('read json')
     finally:
       fp.close()
   except IOError:
     raise InvalidClientSecretsError('File not found: "%s"' % filename)
-  logging.error('validating')
   return _validate_clientsecrets(obj)
 
 
@@ -147,10 +143,9 @@ def loadfile(filename, cache=None):
   _SECRET_NAMESPACE = 'oauth2client:secrets#ns'
 
   if not cache:
-    logging.error('calling _loadfile %s' % filename)
+    logging.error('NO CACHE: loading %s' % filename)
     return _loadfile(filename)
 
-  logging.error('using cache')
   obj = cache.get(filename, namespace=_SECRET_NAMESPACE)
   if obj is None:
     client_type, client_info = _loadfile(filename)

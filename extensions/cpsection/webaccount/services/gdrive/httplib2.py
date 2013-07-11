@@ -54,15 +54,11 @@ except ImportError:
 import hmac
 from gettext import gettext as _
 import socket
-import logging
-logging.error('HTTP')
+
 try:
     import socks
-except ImportError:
-    try:
-        import socks
-    except (ImportError, AttributeError):
-        socks = None
+except (ImportError, AttributeError):
+    socks = None
 
 # Build the appropriate socket wrapper for ssl
 try:

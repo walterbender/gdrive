@@ -27,9 +27,7 @@ import threading
 
 
 from anyjson import simplejson
-logging.error('file: from client basestorage')
 from client import Storage as BaseStorage
-logging.error('file: from client credentials')
 from client import Credentials
 
 from gi.repository import GConf
@@ -48,7 +46,6 @@ class Storage(BaseStorage):
     self._filename = filename
     self._lock = threading.Lock()
     self._use_gconf = use_gconf
-    print 'Storage: use gconf', use_gconf
 
   def _validate_file(self):
     if os.path.islink(self._filename):

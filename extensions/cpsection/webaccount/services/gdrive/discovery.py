@@ -44,12 +44,8 @@ except ImportError:
   from cgi import parse_qsl
 
 # Third-party imports
-logging.error('discovery: before import httplib2 http')
 from httplib2 import RETRIES
 from httplib2 import Http
-logging.error('discovery: after import httplib2 http')
-# from httplib2.http import RETRIES
-# from httplib2.http import Http
 
 import mimeparse
 import uritemplate

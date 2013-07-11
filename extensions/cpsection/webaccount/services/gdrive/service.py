@@ -99,6 +99,8 @@ class WebService(WebService):
         storage = Storage(None, use_gconf=True)
         self._credentials = storage.get()
 
+        # Commented out to force exercising the web authentification
+        # code during debugging.
         # if self._credentials is None or self._credentials.invalid:
         self._credentials = run(FLOW, storage, wkv)
 

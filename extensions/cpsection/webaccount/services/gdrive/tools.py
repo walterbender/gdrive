@@ -31,10 +31,6 @@ import socket
 import sys
 # import webbrowser
 
-# from oauth2client.client import FlowExchangeError
-# from oauth2client.client import OOB_CALLBACK_URN
-# from oauth2client import util
-
 from client import FlowExchangeError
 from client import OOB_CALLBACK_URN
 import util
